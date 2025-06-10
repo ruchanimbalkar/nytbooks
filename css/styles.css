@@ -1,0 +1,50 @@
+body {
+	background-color: black;
+	color: white;
+}
+
+.card-container {
+	background-color: transparent;
+	border: 0.2rem solid pink;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+	padding: 1rem;
+}
+
+.card {
+	background-color: transparent;
+}
+/*This is the version 2 of my NYT Books code. After seeing Xavier's work, I was inspired to do something similar and add a background for smaller screens and have it a different grid*/
+@media (max-width: 600px) {
+	body {
+		background-image: url("https://images.unsplash.com/photo-1615621720189-29bd695f0a6c?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NDkxNTI0OTl8&ixlib=rb-4.1.0&q=85");
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-position: center;
+		background-size: cover;
+	}
+}
+
+@media (min-width: 699px) /*from 699px to next breakpoint*/ {
+	.card-container {
+		background-image: url("https://images.unsplash.com/photo-1532543307581-8b01a7ff954f?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NDkxNTMzOTd8&ixlib=rb-4.1.0&q=85");
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-position: center;
+		background-size: cover;
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media (min-width: 800px) {
+	.card-container {
+		background: none;
+		background-color: teal;
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	/*Only direct desecendants*/
+	.card {
+		background-color: green;
+	}
+}
